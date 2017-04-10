@@ -16,7 +16,8 @@ app.post('/', function (req, res) {
     res.send('post request!');
 });
 
-app.use('/router',require('./route/router'));
+//加载route里面的文件，必须是绝对路径
+app.use(require('./route/router'));
 
 const server = app.listen(3000, function () {
     const port = server.address().port;
